@@ -1,0 +1,46 @@
+body {
+    font-family: Futura;
+}
+
+
+.calculator {
+    width: 420px;
+    height: 600px;
+    border: 1px solid #000;
+    margin: 0 auto;
+}
+
+.button {
+    box-sizing: border-box;
+    border: 1px solid #000;
+    height: 14.2857%;
+    float: left;
+}
+
+.calculator .key, .calculator .enter {
+    text-align: center;
+    font-size: 50px;
+    padding-top: 6px;
+}
+
+.display-field {
+    width: 100%;
+    text-align: right;
+    font-size: 40px;
+}
+
+.enter {
+    width: 50%;
+}
+
+.key {
+    width: 25%;
+}
+
+.std:hover {
+    background-color: darkgray;
+}
+
+.new-row {
+    fl
+}
