@@ -27,6 +27,7 @@ body {
     width: 100%;
     text-align: right;
     font-size: 40px;
+    padding-top: 10px;
 }
 
 .enter {
@@ -37,10 +38,6 @@ body {
     width: 25%;
 }
 
-.std:hover {
+.enter:hover, .key:hover {
     background-color: darkgray;
-}
-
-.new-row {
-    fl
 }
