@@ -2,37 +2,125 @@ $(document).ready(function () {
 
     // jQuery selectors for keys and screen
 
-    var syb1 = $('#syb-1');
-    var syb2 = $('#syb-2');
-    var syb3 = $('#syb-3');
-    var syb4 = $('#syb-4');
-    var syb5 = $('#syb-5');
-    var syb6 = $('#syb-6');
-    var syb7 = $('#syb-7');
-    var syb8 = $('#syb-8');
-    var syb9 = $('#syb-9');
-    var syb0 = $('#syb-0');
+    var negActive = false;
 
-    var sybAdd = $('#syb-add');
-    var sybSub = $('#syb-sub');
-    var sybMult = $('#syb-mult');
-    var sybDiv = $('#syb-div');
+    $('#syb-1').click(function () {
+        equation.push(1);
+        updateScreen();
+    });
+    $('#syb-2').click(function () {
+        equation.push(2);
+        updateScreen();
+    });
+    $('#syb-3').click(function () {
+        equation.push(3);
+        updateScreen();
+    });
+    $('#syb-4').click(function () {
+        equation.push(4);
+        updateScreen();
+    });
+    $('#syb-5').click(function () {
+        equation.push(5);
+        updateScreen();
+    });
+    $('#syb-6').click(function () {
+        equation.push(6);
+        updateScreen();
+    });
+    $('#syb-7').click(function () {
+        equation.push(7);
+        updateScreen();
+    });
+    $('#syb-8').click(function () {
+        equation.push(8);
+        updateScreen();
+    });
+    $('#syb-9').click(function () {
+        equation.push(9);
+        updateScreen();
+    });
+    $('#syb-0').click(function () {
+        equation.push(0);
+        updateScreen();
+    });
 
-    var sybSq = $('#syb-sq');
-    var sybSr = $('#syb-sr');
+    $('#syb-add').click(function () {
+        equation.push('+');
+        negActive = false;
+        updateScreen();
+    });
+    $('#syb-sub').click(function () {
+        equation.push('-');
+        negActive = false;
+        updateScreen();
+    });
+    $('#syb-mult').click(function () {
+        equation.push('*');
+        negActive = false;
+        updateScreen();
+    });
+    $('#syb-div').click(function () {
+        equation.push("/");
+        negActive = false;
+        updateScreen();
+    });
 
-    var sybDec = $('#syb-dec');
-    var sybNeg = $('#syb-neg');
+    $('#syb-sq').click(function () {
+        equation.push('^');
+        updateScreen();
+    });
+    $('#syb-sr').click(function () {
+        equation.push('#');
+        updateScreen();
+    });
 
-    var sybDel = $('#syb-del');
-    var sybCe = $('#syb-ce');
-    var sybC = $('#syb-c');
+    $('#syb-dec').click(function () {
+        equation.push('.');
+        updateScreen();
+    });
+    $('#syb-neg').click(function () {
+        if (!negActive) {
+            equation.push('_');
+            negActive = true;
+        } else {
+            console.log('already neg')
+        }
+        updateScreen();
+    });
 
-    var sybEql = $('#syb-eql');
+    $('#syb-del').click(function () {
+        equation.pop();
+        updateScreen();
+    });
+    $('#syb-ce').click(function () {
+        for (var i = equation.length - 1; i >= 0; i--){
+            var element = equation[i];
+            if (element !== '+' && element !== '-' && element !== '*' && element !== '/') {
+                equation.pop();
+            } else {
+                break;
+            }
+        }
+        updateScreen();
+    });
 
-    var screen = $('#screen');
+    $('#syb-c').click(function () {
+        equation = [];
+        updateScreen();
+    });
+
+    $('#syb-eql').click(function () {
+        // execute equation
+    });
+
+    $('#screen');
 
     var equation = [];
+
+    function updateScreen() {
+        $('#screen').text(equation.join(''))
+    }
 
 
 });
